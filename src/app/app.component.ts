@@ -11,10 +11,16 @@ export class AppComponent {
   instgramUserData: any;
   constructor(public instagrmService: InstagramService) {}
 
+
+
+
   searchUser(userId) {
     this.instagrmService.getInstagramUser(userId).subscribe((data: any) => {
       this.instgramUserData =
         data?.graphql?.user?.edge_owner_to_timeline_media?.edges;
     });
   }
+
+
+  
 }
